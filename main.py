@@ -9,7 +9,7 @@ from discord.ext import tasks
 from discord.ext.commands import Bot 
 from discord_slash import SlashCommand, SlashContext
 
-token = 
+my_secret = os.environ['TOKEN']
 intents = discord.Intents.default()
 prefix = ".e"
 bot = Bot(command_prefix=prefix, intents=intents)
@@ -60,4 +60,4 @@ async def on_slash_command(ctx: SlashContext):
 async def on_command_error(context, error):
     raise error 
 start_beating()
-bot.run(token)
+bot.run(my_secret)

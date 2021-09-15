@@ -24,13 +24,13 @@ async def on_ready():
 
 @tasks.loop(seconds=5)
 async def status_task():
-    st = ["Watching this Server!", "with Shrimp", f"{prefix}help"]
+    st = ["With this Server!", "with Shrimp", f"{prefix}help"]
     await bot.change_presence(activity=discord.Game(random.choice(st)))
 
 bot.remove_command("help")
 
 if __name__ == "__main__":
-    for file in os.listdir("./cogs"):
+    for file in os.listdir("cogs /"):
         if file.endswith(".py"):
             extension = file[:-3]
             try:
